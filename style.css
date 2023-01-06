@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inconsolata", monospace;
+  list-style: none;
+  text-decoration: none;
+}
+header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px 0 50px;
+}
+body {
+  background-image: url("background.jpg");
+}
+.logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+}
+.hamburger {
+  cursor: pointer;
+  display: none;
+  border: none;
+  background: transparent;
+  padding: 1px;
+}
+.hamburger span {
+  width: 25px;
+  height: 4px;
+  margin: 5px;
+  background: #fff;
+  display: block;
+  border-radius: 2px;
+}
+.navbar ul {
+  display: flex;
+}
+.navbar ul li a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.navbar ul li {
+  position: relative;
+  margin: 0 10px;
+}
+.navbar ul li::after {
+  content: "";
+  height: 4px;
+  width: 0;
+  background: #009688;
+  left: 0;
+  bottom: -5px;
+  position: absolute;
+  transition: 0.5s;
+}
+.navbar ul li:hover:after {
+  width: 100%;
+}
+.content {
+  width: 100%;
+  color: #fff;
+  top: 35%;
+  position: absolute;
+  text-align: center;
+}
+.content h1 {
+  font-size: 70px;
+}
+.content p {
+  font-size: 20px;
+}
+.btn {
+  padding: 10px 30px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border: 2px solid #009688;
+  font-size: 15px;
+  text-align: center;
+  background: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn:hover {
+  background: #009688;
+}
+@media screen and (max-width: 1100px) {
+  header {
+    padding: 0 50px 0 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  header {
+    padding: 0 20px 0 20px;
+    height: 50px;
+  }
+  .navbar {
+    top: 50px;
+    position: absolute;
+    right: 0;
+    background: #009688;
+    opacity: 0.95;
+    height: 100vh;
+    width: 50%;
+    border-top-left-radius: 10px;
+    text-align: center;
+    z-index: 1;
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .home {
+    background: dodgerblue;
+  }
+  .navbar ul {
+    display: block;
+  }
+  .navbar ul li {
+    margin-top: 40px;
+  }
+  .navbar ul li::after {
+    display: none;
+  }
+  .navbar ul li a {
+    padding: 15px 50px;
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+  .navbar ul li a:hover {
+    background: dodgerblue;
+    transform: translateX(10px);
+  }
+  .hamburger {
+    display: block;
+  }
+  .content h1 {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .content h1 {
+    font-size: 45px;
+  }
+  .content p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 335px) {
+  .btn {
+    font-size: 10px;
+  }
+}
